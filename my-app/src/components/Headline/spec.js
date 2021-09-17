@@ -3,8 +3,6 @@ import Adapter from "enzyme-adapter-react-16";
 import { shallow, configure } from "enzyme";
 import Headline from "./Headline";
 import { checkProps, findByTestAtrr } from "../../../utils/utils";
-import PropTypes from "prop-types";
-
 configure({ adapter: new Adapter() });
 
 const setUp = (props = {}) => {
