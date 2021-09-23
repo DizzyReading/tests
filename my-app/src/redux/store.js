@@ -1,13 +1,18 @@
 import { configureStore } from "@reduxjs/toolkit";
-import reducer from "../redux/posts/postsSlice";
+// import reducer from "../redux/posts/postsSlice";
+import postsReducer from "../redux/posts/postsSlice";
 
 const preloadedState = {
-  loading: false,
-  posts: [],
-  error: "",
+  posts: {
+    loading: false,
+    posts: [],
+    error: "",
+  },
 };
 
 export const store = configureStore({
-  reducer,
+  reducer: {
+    posts: postsReducer,
+  },
   preloadedState,
 });

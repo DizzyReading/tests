@@ -9,12 +9,17 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.4",
     "eslint-config-react-app": "^6.0.0",
+    "msw": "^0.35.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
     "react-refresh": "^0.10.0",
     "react-scripts": "4.0.3",
+    "react-test-renderer": "^17.0.2",
+    "redux": "^4.1.1",
+    "redux-mock-store": "^1.5.4",
+    "redux-thunk": "^2.3.0",
     "styled-components": "^5.3.1",
     "styled-normalize": "^8.0.7",
     "web-vitals": "^1.0.1"
@@ -29,7 +34,14 @@
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-    }
+    },
+    "testEnvironment": "jsdom",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFilesAfterEnv": [
+      "./src/setupTests.js"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -56,9 +68,15 @@
     "check-prop-types": "^1.1.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.2",
     "eslint": "^7.32.0",
     "eslint-plugin-react": "latest",
     "jest": "^27.2.0",
-    "jest-enzyme": "^7.1.2"
+    "jest-enzyme": "^7.1.2",
+    "jest-styled-components": "^7.0.5",
+    "jsdom": "^17.0.0",
+    "jsdom-global": "^3.0.2",
+    "moxios": "^0.4.0",
+    "regenerator-runtime": "^0.13.9"
   }
 }

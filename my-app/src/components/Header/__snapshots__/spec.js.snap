@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container Block It should render correctly with given css 1`] = `
+.c0 {
+  display: block;
+  width: 100%;
+  max-height: 85px;
+  margin: 0 auto;
+  padding: 0 10px;
+  background: #606060FF;
+}
+
+<header
+  className="c0"
+/>
+`;
+
+exports[`Header Component It should render a logo 1`] = `
+<styled.img
+  data-test="logoImg"
+  src="test-file-stub"
+/>
+`;
+
+exports[`Header Component It should render without errors and default theme 1`] = `
+<Container
+  data-test="headerComponent"
+  theme={
+    Object {
+      "breakpoints": Object {
+        "lg": "screen and (max-width: 1024px)",
+        "md": "screen and (max-width: 768px)",
+        "sm": "screen and (max-width: 640px)",
+        "xl": "screen and (max-width: 1280px)",
+      },
+      "colors": Object {
+        "accent1": "hsl(34.9,98.6%,72.9%)",
+        "background1": "#D6ED17FF",
+        "background2": "hsl(232.7,27.3%,23.7%)",
+        "button": "hsl(205.1,100%,36.1%)",
+        "primary1": "#606060FF",
+      },
+      "fonts": Object {
+        "main": "Space Grotesk, sans-serif",
+        "title": "Space Grotesk, sans-serif",
+      },
+    }
+  }
+>
+  <styled.div>
+    <styled.div>
+      <styled.img
+        data-test="logoImg"
+        src="test-file-stub"
+      />
+    </styled.div>
+  </styled.div>
+</Container>
+`;

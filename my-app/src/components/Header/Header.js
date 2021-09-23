@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Container, Wrap, Logo, Image } from "./HeaderStyles";
 import logo from "../../assets/graphics/logo.png";
-const Header = () => {
+import PropTypes from "prop-types";
+const Header = ({ theme, ...props }) => {
   return (
-    <Container data-test="headerComponent">
+    <Container theme={theme} data-test="headerComponent">
       <Wrap>
         <Logo>
           <Image data-test="logoImg" src={logo} />
@@ -11,6 +13,10 @@ const Header = () => {
       </Wrap>
     </Container>
   );
+};
+
+Header.propTypes = {
+  theme: PropTypes.object,
 };
 
 export default Header;

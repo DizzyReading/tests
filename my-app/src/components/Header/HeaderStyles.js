@@ -9,6 +9,8 @@ export const Container = styled.header`
   background: ${(props) => props.theme.colors.primary1}; ;
 `;
 
+Container.displayName = "Container";
+
 export const Wrap = styled.div`
   display: relative;
   width: 100%;
@@ -25,6 +27,7 @@ export const Logo = styled.div`
   --moz-transform: translateY(-50%);
   transform: translateY(-50%);
 `;
+
 export const Image = styled.img`
   max-width: 70%;
   margin-top: 9rem;

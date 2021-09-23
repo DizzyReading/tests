@@ -1,11 +1,14 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+/* eslint-disable no-unused-vars */
+import { createSlice, createAsyncThunk, createAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const getPosts = createAsyncThunk(
   "posts/getPosts",
-  async ({ rejectWithValue }) => {
+  async (data, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post(`/api/users/signin`);
+      const { data } = await axios.get(
+        `https://jsonplaceholder.typicode.com/posts?_limit=10`
+      );
 
       return data;
     } catch (error) {
@@ -18,12 +21,20 @@ export const getPosts = createAsyncThunk(
   }
 );
 
+export const getPostsRequest = getPosts.pending;
+export const getPostsSuccess = getPosts.fulfilled;
+export const getPostsFailure = getPosts.rejected;
+
 const initialState = {};
 
-const { reducer } = createSlice({
+const postsSlice = createSlice({
   name: "posts",
   initialState,
-  reducers: {},
+  reducers: {
+    fetchPosts: (state, action) => {
+      return action.payload;
+    },
+  },
   extraReducers: {
     [getPosts.pending]: (state) => {
       state.loading = true;
@@ -35,10 +46,10 @@ const { reducer } = createSlice({
     },
 
     [getPosts.fulfilled]: (state, action) => {
-      state.loading = false;
+      // state.loading = false;
       state.posts = action.payload;
     },
   },
 });
-
-export default reducer;
+export const { fetchPosts } = postsSlice.actions;
+export default postsSlice.reducer;
