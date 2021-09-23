@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component Should render without errors 1`] = `
+<div
+  className="App"
+  data-test="appComponent"
+>
+  <Header />
+  <styled.section
+    className="main"
+  >
+    <Headline
+      description="Click the button to render posts!"
+      header="Posts"
+      tempArr={
+        Array [
+          Object {
+            "age": 23,
+            "email": "janedoe@gmail.com",
+            "fName": "Jane",
+            "lName": "Doe",
+            "onlineStatus": false,
+          },
+        ]
+      }
+    />
+    <SharedButton
+      buttonText="Get Posts"
+      emitEvent={[Function]}
+    />
+  </styled.section>
+</div>
+`;

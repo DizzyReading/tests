@@ -19,7 +19,7 @@ const tempArr = [
 ];
 
 function App() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   useEffect(() => {
     // setTimeout(() => {
@@ -39,7 +39,7 @@ function App() {
     tempArr,
   };
   return (
-    <div className="App">
+    <div className="App" data-test="appComponent">
       <Header />
       <Section className="main">
         <Headline {...props} />

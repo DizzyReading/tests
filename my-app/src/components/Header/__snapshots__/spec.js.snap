@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Container Block It should render correctly with given css 1`] = `
+exports[`Container Block Should render correctly with given css 1`] = `
 .c0 {
   display: block;
   width: 100%;
@@ -15,14 +15,14 @@ exports[`Container Block It should render correctly with given css 1`] = `
 />
 `;
 
-exports[`Header Component It should render a logo 1`] = `
+exports[`Header Component Should render a logo 1`] = `
 <styled.img
   data-test="logoImg"
   src="test-file-stub"
 />
 `;
 
-exports[`Header Component It should render without errors and default theme 1`] = `
+exports[`Header Component Should render without errors and default theme 1`] = `
 <Container
   data-test="headerComponent"
   theme={
@@ -56,4 +56,14 @@ exports[`Header Component It should render without errors and default theme 1`] 
     </styled.div>
   </styled.div>
 </Container>
+`;
+
+exports[`Title Block Should render correctly with given css 1`] = `
+.c0 {
+  color: #606060FF;
+}
+
+<h1
+  className="c0"
+/>
 `;

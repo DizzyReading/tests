@@ -6,7 +6,7 @@ import Header from "./Header";
 import toJson from "enzyme-to-json";
 import theme from "../../themes/default";
 import { findByTestAtrr, renderWithTheme } from "../../../utils/utils";
-import { Container, Image, Logo, Wrap } from "./HeaderStyles";
+import { Container, Image, Logo, Title, Wrap } from "./HeaderStyles";
 configure({ adapter: new Adapter() });
 
 const setUp = (props = {}) => {
@@ -22,13 +22,13 @@ describe("Header Component", () => {
     component = setUp();
   });
 
-  it("It should render without errors and default theme", () => {
+  it("Should render without errors and default theme", () => {
     const container = findByTestAtrr(component, "headerComponent");
     expect(container.length).toBe(1);
     expect(toJson(container)).toMatchSnapshot();
   });
 
-  it("It should render a logo", () => {
+  it("Should render a logo", () => {
     // console.log(component.debug());
     const logo = findByTestAtrr(component, "logoImg");
     expect(logo.length).toBe(1);
@@ -37,8 +37,15 @@ describe("Header Component", () => {
 });
 
 describe("Container Block", () => {
-  it("It should render correctly with given css", () => {
+  it("Should render correctly with given css", () => {
     const tree = renderWithTheme(<Container></Container>).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});
+
+describe("Title Block", () => {
+  it("Should render correctly with given css", () => {
+    const tree = renderWithTheme(<Title></Title>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

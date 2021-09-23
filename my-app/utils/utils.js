@@ -31,13 +31,6 @@ export const renderWithTheme = (component) => {
   );
 };
 
-// export const renderWithTheme = (children, themeForTests) => {
-//   // return renderer.create(
-//   //   <ThemeProvider theme={theme}>{component}</ThemeProvider>
-//   // );
-//   return shallow(children, { theme: themeForTests });
-// };
-
 const middlewares = [ReduxThunk];
 
 export const testStore = (initialState) => {
